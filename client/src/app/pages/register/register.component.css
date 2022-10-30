@@ -1,0 +1,12 @@
+/* input.ng-invalid {
+  border: 1px solid red;
+}
+ */
+
+section {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://bagisto.com/wp-content/uploads/2018/09/eCommerce-Shop.png")
+      no-repeat center center;
+  background-size: cover;
+  height: calc(100vh - 56px);
+}

@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark text-light">
+  <div class="container d-flex ">
+    <a class="navbar-brand" routerLink="/me" >Shopify</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav ">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item active">
+          <nav class="nav">
+            <a class="nav-link" routerLink="/me" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" >Home</a>
+            <a class="nav-link" routerLink="/products" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" >Products</a>
+            <a class="nav-link" routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" >About Us</a>
+          </nav>
+        </li>
+
+        <li class="nav-item ms-auto">
+          <a class="nav-link" routerLink="/register" routerLinkActive="active"
+           [routerLinkActiveOptions]="{exact:true}" *ngIf="!_data.isLoggedIn">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="" routerLinkActive="active" 
+          [routerLinkActiveOptions]="{exact:true}" *ngIf="!_data.isLoggedIn">Login</a>
+        </li>
+        <li class="nav-item" *ngIf="_data.isLoggedIn">
+          <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a class="nav-link" *ngIf="_data.isLoggedIn">{{this._data.userData?.['username']}}</a>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" routerLink="/profile">setting</a></li>
+                  <li>
+                    <a class="dropdown-item"*ngIf="_data.isLoggedIn" (click)="logout()">logout</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div> 
+        </li>
+      </ul>
+    </div>
+  </div>
+  </nav>

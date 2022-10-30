@@ -1,0 +1,6 @@
+.navbar-nav {
+  --bs-nav-link-padding-y: 0 !important;
+}
+
+.dropdown-toggle::after {
+}

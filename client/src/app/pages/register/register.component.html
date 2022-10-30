@@ -1,0 +1,61 @@
+<section>
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-4">
+              <h2 class="text-center mb-4">Create an account</h2>
+              <form #myform="ngForm" (ngSubmit)="registeruser(myform)" >
+
+                   <div class="form-outline mt-4">
+                      <input type="text" id="form3Example1cg" class="form-control form-control-md w-75 mx-auto "  
+                                        placeholder="enter your username" name="username" 
+                                        [(ngModel)]="userRegister.username" #usernameref="ngModel" required minlength="6" maxlength="20" />
+                    
+                  </div>
+                  <!-- show error-->  
+                  <div  *ngIf="usernameref.invalid &&(usernameref.touched || myform.submitted)" class="w-75 mx-auto ">
+                      <p class=" text-danger ms-2" *ngIf="usernameref.errors?.['required']">required username</p>  
+                      <p class=" text-danger ms-2" *ngIf="usernameref.errors?.['minlength']">min length is 6 character</p>  
+                      <p class=" text-danger ms-2" *ngIf="usernameref.errors?.['maxlength']">max length is 20 character</p>  
+                  </div>
+                  <div class="form-outline mt-3">
+                      <input type="email" id="form3Example3cg" class="form-control form-control-md w-75 mx-auto " 
+                                                        placeholder="enter your email" name="email" 
+                                                        [(ngModel)]="userRegister.email" #emailref="ngModel" required email />
+                  </div>
+                    <!-- show error-->  
+                  <div  *ngIf="emailref.invalid &&(emailref.touched || myform.submitted)" class="w-75 mx-auto ">
+                      <p class=" text-danger ms-2" *ngIf="emailref.errors?.['required']">required email</p>  
+                      <p class=" text-danger ms-2" *ngIf="emailref.errors?.['email']">invalid email</p>  
+                  </div>
+                  <div class="form-outline mt-3" >
+                      <input type="password" id="form3Example4cg" class="form-control form-control-md w-75 mx-auto "  
+                                                        placeholder="enter your password" name="password" 
+                                                        [(ngModel)]="userRegister.password" #passwordref="ngModel" required  minlength="8" maxlength="20"
+                                                        pattern="^[a-zA-Z]+$">
+                  </div>
+                    <!-- show error-->  
+                  <div  *ngIf="passwordref.invalid &&(passwordref.touched || myform.submitted)" class="w-75 mx-auto" >
+                      <p class=" text-danger ms-2" *ngIf="passwordref.errors?.['required']">required password</p>  
+                      <p class=" text-danger ms-2" *ngIf="passwordref.errors?.['minlength']">invalid password</p>
+                      <p class=" text-danger ms-2" *ngIf="passwordref.errors?.['maxlength']">invalid password</p> 
+                      <p class=" text-danger ms-2" *ngIf="passwordref.errors?.['pattern']">invalid password</p> 
+                  </div>
+                  <div class="d-flex justify-content-center mt-4">
+                      <button type="submit"
+                        class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                  </div>
+
+                  <p class="text-center text-muted mt-5 mb-0">Have already an account? <a routerLink=""
+                        class="fw-bold text-body"><u>Login here</u></a>
+                  </p>
+              </form>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

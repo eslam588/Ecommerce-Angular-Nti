@@ -1,0 +1,21 @@
+.layout {
+  height: 100vh;
+  display: grid;
+  grid-template-areas:
+    "app-navbar"
+    "section"
+    "app-footer";
+  grid-template-rows: 50px 1fr 50px;
+}
+
+app-navbar {
+  grid-area: app-navbar;
+}
+
+section {
+  grid-area: section;
+}
+
+app-footer {
+  grid-area: app-footer;
+}
