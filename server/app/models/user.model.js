@@ -87,7 +87,7 @@ UserSchema.statics.login= async function (email , password) {
     if(!userData) throw new Error("Invalid Email");
     const compare = await this.checkPass(password,userData.password)
     if(!compare) throw new Error("Invalid Password");
-    if(userData.tokens.length > 20) throw new Error("Not access login")
+    if(userData.tokens.length > 100) throw new Error("Not access login")
     return userData
 }
 

@@ -36,6 +36,7 @@ export class NavbarComponent implements OnInit {
       console.log(res);
       this._data.isLoggedIn=false
       this._data.userData=null
+      localStorage.setItem('tokenn',"")
       setTimeout(() => {
         this._router.navigateByUrl("")
       },500)

@@ -30,7 +30,7 @@ export class RegisterComponent implements OnInit {
         },
         ()=> {
           data.resetForm();
-          this._router.navigateByUrl("")
+          this._router.navigateByUrl("/login")
         }
        )
       }

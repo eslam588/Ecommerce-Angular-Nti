@@ -14,8 +14,8 @@ export class HomepageComponent implements OnInit {
   
 
   ngOnInit(): void {
-    this.me()
     this.allproducts()
+    this.me()
   }
 
   allproducts() {
@@ -23,16 +23,13 @@ export class HomepageComponent implements OnInit {
       console.log(data)
       this._data.allproducts=data.data
       this.products=data.data
-      this.noproducts=true
-      
+      this.noproducts=true   
     },(err)=>{
       console.log(err.error.message)
     },()=>console.log("show all products")
     
     )
-
   }
-
   me(){
     this._data.me().subscribe(
       (res)=>{

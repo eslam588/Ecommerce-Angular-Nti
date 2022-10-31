@@ -40,10 +40,7 @@ export class LoginComponent implements OnInit {
           this._data.userData = null
           this.errorMsg=e.error.message
         },()=>{
-          setTimeout(()=>{
-            this._router.navigateByUrl("me")
-          },500)
-         
+            this._router.navigateByUrl("")
         }
        )
 

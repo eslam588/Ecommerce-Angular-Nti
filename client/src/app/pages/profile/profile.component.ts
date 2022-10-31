@@ -13,7 +13,6 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     this.me()
   }
-
   me(){
     this._data.me().subscribe(
       (res)=>{console.log(res)},

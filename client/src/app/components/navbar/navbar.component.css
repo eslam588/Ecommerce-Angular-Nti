@@ -3,4 +3,7 @@
 }
 
 .dropdown-toggle::after {
+  position: absolute;
+  right: 0 !important;
+  top: 15px;
 }
